@@ -1,0 +1,421 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'i_clk'
+Slack : -26.621
+TNS   : -66765.024
+
+Type  : Slow 1100mV 85C Model Setup 'processor:dut|pipelined:CPU|EX_MEM:EX_MEM|o_alu_data[10]'
+Slack : -12.637
+TNS   : -22512.285
+
+Type  : Slow 1100mV 85C Model Setup 'i_rst_n'
+Slack : -11.482
+TNS   : -24116.857
+
+Type  : Slow 1100mV 85C Model Setup 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : -2.102
+TNS   : -2.102
+
+Type  : Slow 1100mV 85C Model Setup 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : -1.950
+TNS   : -1.950
+
+Type  : Slow 1100mV 85C Model Setup 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : -1.054
+TNS   : -2.103
+
+Type  : Slow 1100mV 85C Model Hold 'i_rst_n'
+Slack : -0.426
+TNS   : -0.959
+
+Type  : Slow 1100mV 85C Model Hold 'i_clk'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : 0.580
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : 0.707
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'processor:dut|pipelined:CPU|EX_MEM:EX_MEM|o_alu_data[10]'
+Slack : 0.791
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : 0.847
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : -4.228
+TNS   : -4.228
+
+Type  : Slow 1100mV 85C Model Recovery 'i_clk'
+Slack : -3.716
+TNS   : -3.716
+
+Type  : Slow 1100mV 85C Model Recovery 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : -3.482
+TNS   : -3.482
+
+Type  : Slow 1100mV 85C Model Recovery 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : -2.372
+TNS   : -4.738
+
+Type  : Slow 1100mV 85C Model Removal 'i_clk'
+Slack : -5.854
+TNS   : -1673.998
+
+Type  : Slow 1100mV 85C Model Removal 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : 1.872
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : 2.531
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : 3.261
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'i_clk'
+Slack : -4.555
+TNS   : -6585.933
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'i_rst_n'
+Slack : -2.450
+TNS   : -23536.765
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : -0.724
+TNS   : -2.290
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : -0.724
+TNS   : -1.196
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : -0.724
+TNS   : -1.122
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'processor:dut|pipelined:CPU|EX_MEM:EX_MEM|o_alu_data[10]'
+Slack : -0.262
+TNS   : -4.782
+
+Type  : Slow 1100mV 0C Model Setup 'i_clk'
+Slack : -26.204
+TNS   : -66439.519
+
+Type  : Slow 1100mV 0C Model Setup 'processor:dut|pipelined:CPU|EX_MEM:EX_MEM|o_alu_data[10]'
+Slack : -12.331
+TNS   : -22198.194
+
+Type  : Slow 1100mV 0C Model Setup 'i_rst_n'
+Slack : -11.116
+TNS   : -23021.117
+
+Type  : Slow 1100mV 0C Model Setup 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : -2.091
+TNS   : -2.091
+
+Type  : Slow 1100mV 0C Model Setup 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : -1.998
+TNS   : -1.998
+
+Type  : Slow 1100mV 0C Model Setup 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : -1.049
+TNS   : -2.091
+
+Type  : Slow 1100mV 0C Model Hold 'i_rst_n'
+Slack : -0.845
+TNS   : -5.112
+
+Type  : Slow 1100mV 0C Model Hold 'i_clk'
+Slack : -0.232
+TNS   : -0.285
+
+Type  : Slow 1100mV 0C Model Hold 'processor:dut|pipelined:CPU|EX_MEM:EX_MEM|o_alu_data[10]'
+Slack : 0.618
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : 0.626
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : 0.797
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : 0.851
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : -4.299
+TNS   : -4.299
+
+Type  : Slow 1100mV 0C Model Recovery 'i_clk'
+Slack : -4.004
+TNS   : -4.004
+
+Type  : Slow 1100mV 0C Model Recovery 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : -3.582
+TNS   : -3.582
+
+Type  : Slow 1100mV 0C Model Recovery 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : -2.569
+TNS   : -5.132
+
+Type  : Slow 1100mV 0C Model Removal 'i_clk'
+Slack : -5.229
+TNS   : -1425.348
+
+Type  : Slow 1100mV 0C Model Removal 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : 2.246
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : 2.572
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : 3.295
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'i_clk'
+Slack : -4.555
+TNS   : -7196.867
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'i_rst_n'
+Slack : -2.502
+TNS   : -24243.947
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : -0.724
+TNS   : -2.277
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : -0.724
+TNS   : -1.187
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : -0.724
+TNS   : -1.115
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'processor:dut|pipelined:CPU|EX_MEM:EX_MEM|o_alu_data[10]'
+Slack : -0.324
+TNS   : -5.740
+
+Type  : Fast 1100mV 85C Model Setup 'i_clk'
+Slack : -12.150
+TNS   : -31964.966
+
+Type  : Fast 1100mV 85C Model Setup 'processor:dut|pipelined:CPU|EX_MEM:EX_MEM|o_alu_data[10]'
+Slack : -5.648
+TNS   : -9490.131
+
+Type  : Fast 1100mV 85C Model Setup 'i_rst_n'
+Slack : -5.325
+TNS   : -8259.241
+
+Type  : Fast 1100mV 85C Model Setup 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : -0.988
+TNS   : -0.988
+
+Type  : Fast 1100mV 85C Model Setup 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : -0.867
+TNS   : -0.867
+
+Type  : Fast 1100mV 85C Model Setup 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : -0.097
+TNS   : -0.192
+
+Type  : Fast 1100mV 85C Model Hold 'i_rst_n'
+Slack : -0.934
+TNS   : -57.539
+
+Type  : Fast 1100mV 85C Model Hold 'i_clk'
+Slack : -0.082
+TNS   : -0.082
+
+Type  : Fast 1100mV 85C Model Hold 'processor:dut|pipelined:CPU|EX_MEM:EX_MEM|o_alu_data[10]'
+Slack : -0.025
+TNS   : -0.036
+
+Type  : Fast 1100mV 85C Model Hold 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : 0.175
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : 0.300
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'i_clk'
+Slack : -2.261
+TNS   : -9.959
+
+Type  : Fast 1100mV 85C Model Recovery 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : -2.202
+TNS   : -2.202
+
+Type  : Fast 1100mV 85C Model Recovery 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : -1.841
+TNS   : -1.841
+
+Type  : Fast 1100mV 85C Model Recovery 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : -1.200
+TNS   : -2.398
+
+Type  : Fast 1100mV 85C Model Removal 'i_clk'
+Slack : -2.547
+TNS   : -781.703
+
+Type  : Fast 1100mV 85C Model Removal 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : 0.673
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : 0.878
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : 1.217
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'i_clk'
+Slack : -2.636
+TNS   : -3534.643
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'i_rst_n'
+Slack : -1.743
+TNS   : -10314.061
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'processor:dut|pipelined:CPU|EX_MEM:EX_MEM|o_alu_data[10]'
+Slack : -0.077
+TNS   : -0.202
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : 0.056
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : 0.062
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : 0.149
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'i_clk'
+Slack : -10.863
+TNS   : -28095.304
+
+Type  : Fast 1100mV 0C Model Setup 'processor:dut|pipelined:CPU|EX_MEM:EX_MEM|o_alu_data[10]'
+Slack : -4.980
+TNS   : -8526.629
+
+Type  : Fast 1100mV 0C Model Setup 'i_rst_n'
+Slack : -4.651
+TNS   : -6667.153
+
+Type  : Fast 1100mV 0C Model Setup 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : -0.886
+TNS   : -0.886
+
+Type  : Fast 1100mV 0C Model Setup 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : -0.788
+TNS   : -0.788
+
+Type  : Fast 1100mV 0C Model Setup 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : -0.055
+TNS   : -0.109
+
+Type  : Fast 1100mV 0C Model Hold 'i_rst_n'
+Slack : -0.967
+TNS   : -106.421
+
+Type  : Fast 1100mV 0C Model Hold 'i_clk'
+Slack : -0.250
+TNS   : -0.367
+
+Type  : Fast 1100mV 0C Model Hold 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : 0.141
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'processor:dut|pipelined:CPU|EX_MEM:EX_MEM|o_alu_data[10]'
+Slack : 0.142
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : 0.151
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : 0.270
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : -2.091
+TNS   : -2.091
+
+Type  : Fast 1100mV 0C Model Recovery 'i_clk'
+Slack : -2.063
+TNS   : -40.420
+
+Type  : Fast 1100mV 0C Model Recovery 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : -1.778
+TNS   : -1.778
+
+Type  : Fast 1100mV 0C Model Recovery 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : -1.249
+TNS   : -2.497
+
+Type  : Fast 1100mV 0C Model Removal 'i_clk'
+Slack : -2.140
+TNS   : -679.129
+
+Type  : Fast 1100mV 0C Model Removal 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : 0.729
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : 0.843
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : 1.142
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'i_clk'
+Slack : -2.636
+TNS   : -3218.533
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'i_rst_n'
+Slack : -1.481
+TNS   : -8962.018
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'processor:dut|pipelined:CPU|EX_MEM:EX_MEM|o_alu_data[10]'
+Slack : 0.014
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'processor:dut|timer:timer|clk_sel:sys_clk|clk2'
+Slack : 0.076
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'processor:dut|timer:timer|clk_sel:sys_clk|clk8'
+Slack : 0.084
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'processor:dut|timer:timer|clk_sel:sys_clk|clk4'
+Slack : 0.154
+TNS   : 0.000
+
+------------------------------------------------------------

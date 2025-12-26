@@ -1,0 +1,6 @@
+Info (10281): Verilog HDL Declaration information at uart_transmitter.sv(24): object "START_TX" differs only in case from object "start_tx" in the same scope File: D:/DATN_FINAL/RISC_V/uart/uart_transmitter.sv Line: 24
+Info (10281): Verilog HDL Declaration information at pipelined.sv(28): object "PC_TRAP" differs only in case from object "pc_trap" in the same scope File: D:/DATN_FINAL/RISC_V/pipelined.sv Line: 28
+Info (10281): Verilog HDL Declaration information at PCNEXT.sv(8): object "pc_trap" differs only in case from object "PC_TRAP" in the same scope File: D:/DATN_FINAL/RISC_V/PCNEXT.sv Line: 8
+Info (10281): Verilog HDL Declaration information at CSR.sv(24): object "mie" differs only in case from object "MIE" in the same scope File: D:/DATN_FINAL/RISC_V/CSR.sv Line: 24
+Info (10281): Verilog HDL Declaration information at CSR.sv(23): object "mepc" differs only in case from object "MEPC" in the same scope File: D:/DATN_FINAL/RISC_V/CSR.sv Line: 23
+Info (10281): Verilog HDL Declaration information at CSR.sv(31): object "MCAUSE" differs only in case from object "mcause" in the same scope File: D:/DATN_FINAL/RISC_V/CSR.sv Line: 31

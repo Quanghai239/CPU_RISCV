@@ -1,0 +1,17 @@
+module IMEM #(parameter SIZE = 1024)(
+    input logic i_clk,
+    input logic in_rst,
+    input logic [31:0] pc,
+    output logic [31:0] instr
+);
+
+    bit [31:0] memory [0:SIZE-1];
+    assign instr = memory[pc[13:2]];
+
+    initial begin
+        // $readmemh("D:/chiase/RISC_Interrupt/tb/program4kit.txt", memory);
+        // $readmemh("D:/chiase/RISC_Interrupt/tb/program4kit(1).txt", memory);
+        //$readmemh("D:/shared/DATN/doan/01_tb/uarthex.txt", memory);
+        $readmemh("01_tb/test_sim.txt", memory);
+    end
+endmodule

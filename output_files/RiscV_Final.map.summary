@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Thu Dec  4 12:22:16 2025
+Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Revision Name : RiscV_Final
+Top-level Entity Name : wrapper_processor
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 4731
+Total pins : 190
+Total virtual pins : 0
+Total block memory bits : 32
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

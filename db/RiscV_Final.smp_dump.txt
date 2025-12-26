@@ -1,0 +1,45 @@
+
+State Machine - |wrapper_processor|processor:dut|pipelined:CPU|machine_controller:MC|state
+Name state.TRAP_RETURN state.TRAP_TAKEN state.OPERATING state.IDLE 
+state.IDLE 0 0 0 0 
+state.OPERATING 0 0 1 1 
+state.TRAP_TAKEN 0 1 0 1 
+state.TRAP_RETURN 1 0 0 1 
+
+State Machine - |wrapper_processor|processor:dut|APB_UART_top:uart|APB_Interface:apb_interface|state
+Name state.IDLE state.ACCESS state.SETUP 
+state.IDLE 0 0 0 
+state.SETUP 1 0 1 
+state.ACCESS 1 1 0 
+
+State Machine - |wrapper_processor|processor:dut|pipelined:CPU|apb_master:AM|cs
+Name cs.IDLE cs.ACCESS cs.SETUP 
+cs.IDLE 0 0 0 
+cs.SETUP 1 0 1 
+cs.ACCESS 1 1 0 
+
+State Machine - |wrapper_processor|processor:dut|APB_UART_top:uart|uart_transmitter:uart_tx|fifo_state
+Name fifo_state.WAIT_TX fifo_state.START_TX fifo_state.LOADING fifo_state.IDLE 
+fifo_state.IDLE 0 0 0 0 
+fifo_state.LOADING 0 0 1 1 
+fifo_state.START_TX 0 1 0 1 
+fifo_state.WAIT_TX 1 0 0 1 
+
+State Machine - |wrapper_processor|processor:dut|APB_UART_top:uart|uart_transmitter:uart_tx|state
+Name state.STOP_STATE state.DATA_STATE state.START_STATE state.IDLE_STATE 
+state.IDLE_STATE 0 0 0 0 
+state.START_STATE 0 0 1 1 
+state.DATA_STATE 0 1 0 1 
+state.STOP_STATE 1 0 0 1 
+
+State Machine - |wrapper_processor|processor:dut|APB_UART_top:uart|uart_receiver:uart_rx|fifo_state
+Name fifo_state.WAITING 
+fifo_state.IDLE 0 
+fifo_state.WAITING 1 
+
+State Machine - |wrapper_processor|processor:dut|APB_UART_top:uart|uart_receiver:uart_rx|state
+Name state.STOP_STATE state.DATA_STATE state.START_STATE state.IDLE_STATE 
+state.IDLE_STATE 0 0 0 0 
+state.START_STATE 0 0 1 1 
+state.DATA_STATE 0 1 0 1 
+state.STOP_STATE 1 0 0 1 

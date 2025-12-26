@@ -1,0 +1,213 @@
+auipc x5, 0 						# Lấy địa chỉ gần hiện tại của PC vào x5
+addi x5, x5, isr 					# Cộng thêm offset để lấy địa chỉ thực của isr
+csrrw x0, 0x305, x5					# Ghi địa chỉ isr vào mtvec (Machine Trap-Vector Base Address)
+li x6, 0x8 						# Bit 3 của mstatus là MIE (Machine Interrupt Enable)
+csrrs x0, 0x300, x6
+li x7,0x400 						# Bit 7 của mie là MTIE (Machine Timer Interrupt Enable)
+addi x7,x7,0x400 					#bit 11 của mie là MEIE
+addi x7,x7,0x80
+csrrs x0, 0x304, x7
+lui x8, 0x80000
+addi x8,x8,7 						#nguyên nhân ngắt của timer
+addi x9,x8,5 						#nguyên nhân ngắt của uart
+addi x26,x8,1 						#nguyên nhân ngắt của BUTTON1
+addi x27,x8,2 						#nguyên nhân ngắt của BUTTON2
+addi x28,x8,3 						#nguyên nhân ngắt của BUTTON3
+addi x29,x8,4 						#nguyên nhân ngắt của BUTTON4
+andi x18,x18,0
+addi x18,x18,2 						#nguyên nhân ngắt của exception
+
+addi x20,x20,0x1F					#nạp giá trị cho timer
+addi x21,x21,0xB3 					#setup cấu hình cho timer
+sb x20,0(x0)
+nop 							#câu giờ để apb có thể ghi kịp data
+sb x21,4(x0)
+nop 							#task có 3 cycle
+nop 							#nop 3 cái để chờ data được ghi xong #F0005013(lệnh sai)
+addi x21,x21,-128 #xóa tín hiệu load
+sw x21,4(x0)
+nop
+li x20, 0xAAAA
+
+nop
+sh x20, 0x20C(x0) #chọn ngắt cạnh lên
+addi x20, x0, 0xFF
+nop
+sb x20, 0x208(x0)
+li x21, 0x76543
+nop
+sw x21, 0x204(x0) #set ngắt UART là cao nhất
+
+main_loop: li x13,10
+lap: addi x13,x13,-1
+nop
+bne x13,x0, lap
+addi x14,x14,1 						#số vòng lặp
+jal main_loop
+
+tmr_isr: li x15, 0x80
+jal delay
+sw x15, 16(x10) #out ra green led
+srli x15,x15,1
+bne x15,x0,tmr_isr
+li x15,0x80
+nop #mret
+nop
+nop
+isr: csrrs x12,0x342,x0 #đọc nguyên nhân ngắt(Mstatus)
+beq x12,x8, tmr_isr
+beq x12,x9, ext_isr
+beq x12,x29, INT3
+beq x12,x28, INT2
+beq x12,x27, INT1
+beq x12,x26, INT0
+beq x12,x18, excep_isr
+nop
+nop
+nop #mret #nếu 0 xác định được nguyên nhân ngắt thì về lại
+ext_isr: lw x17,0(x11) #lấy data từ switch
+li x31,1
+li x5,-1
+li x6,0xF
+mv x19,x17
+li x23,0x0E0E0E0E
+li x23,0x0E0E0E0E
+lap2: addi x5,x5,1
+andi x30,x19,1 #kiểm tra bit cuối có phải là 1 0
+beq x5,x6,skip
+srai x19, x19, 1
+bne x30,x31,lap2
+jal LOOKUP
+skip: sw x17,32(x10)
+nop #mret
+nop
+nop
+excep_isr: li x17,0x79
+sb x17,39(x10)
+nop #mret
+nop
+nop
+INT0: li x17, 129 #chương trình ngắt lại vào giữa
+sw x17, 16(x10)
+jal delay
+li x17, 66
+sw x17, 16(x10)
+jal delay
+li x17, 36
+sw x17, 16(x10)
+jal delay
+li x17, 24
+sw x17, 16(x10)
+jal delay
+nop #mret
+nop
+nop
+INT1: li x17, 24 #chương trình ngắt lại vào giữa
+sw x17, 16(x10)
+jal delay
+li x17, 36
+sw x17, 16(x10)
+jal delay
+li x17, 66
+sw x17, 16(x10)
+jal delay
+li x17, 129
+sw x17, 16(x10)
+jal delay
+nop #mret
+nop
+nop
+INT2: addi x5,x0,0
+addi x6, x0, 10
+loop1: beq x6,x0, exit1
+jal LOOKUP
+sb x5,24(x10)
+jal delay
+addi x5,x5,1
+addi x6,x6,-1
+jal loop1
+exit1: nop #mret
+nop
+nop
+INT3: addi x5,x0,9
+addi x6, x0, 10
+loop2: beq x6,x0, exit2
+jal LOOKUP
+sb x5,25(x10)
+jal delay
+addi x5,x5,-1
+addi x6,x6,-1
+jal loop2
+exit2: nop #mret
+nop
+nop
+delay: addi x16,x16,10
+lap1: addi x16,x16,-1
+beq x16,x0,lap1
+ret
+addi x7,x5,0
+beq x7,x0,SO0 #nếu là số 0 thì nhảy và chuyển nó để hiển thị số 0 lên LED 7 đoạn
+addi x7,x5,-1 #thu xem so nay co phai la so 1 khong
+beq x7,x0,SO1
+addi x7,x5,-2 #thu xem so nay co phai la so 1 khong
+beq x7,x0,SO2
+addi x7,x5,-3 #thu xem so nay co phai la so 1 khong
+beq x7,x0,SO3
+addi x7,x5,-4 #thu xem so nay co phai la so 1 khong
+beq x7,x0,SO4
+addi x7,x5,-5 #thu xem so nay co phai la so 1 khong
+beq x7,x0,SO5
+addi x7,x5,-6 #thu xem so nay co phai la so 1 khong
+beq x7,x0,SO6
+addi x7,x5,-7 #thu xem so nay co phai la so 1 khong
+beq x7,x0,SO7
+addi x7,x5,-8 #thu xem so nay co phai la so 1 khong
+beq x7,x0,SO8
+addi x7,x5,-9 #thu xem so nay co phai la so 1 khong
+beq x7,x0,SO9
+addi x7,x5,-10 #thu xem so nay co phai la so 1 khong
+beq x7,x0,CHUA
+addi x7,x5,-11 #thu xem so nay co phai la so 1 khong
+beq x7,x0,CHUB
+addi x7,x5,-12 #thu xem so nay co phai la so 1 khong
+beq x7,x0,CHUC
+addi x7,x5,-13 #thu xem so nay co phai la so 1 khong
+beq x7,x0,CHUD
+addi x7,x5,-14 #thu xem so nay co phai la so 1 khong
+beq x7,x0,CHUE
+addi x7,x5,-15 #thu xem so nay co phai la so 1 khong
+beq x7,x0,CHUF
+SO0: addi x17,x0,0x40 #dùng li cũng được
+ret
+SO1: addi x17,x0,0x79
+ret
+SO2: addi x17,x0,0x24
+ret
+SO3: addi x17,x0,0x30
+ret
+SO4: addi x17,x0,0x19
+ret
+SO5: addi x17,x0,0x12
+ret
+SO6: addi x17,x0,0x02
+ret
+SO7: addi x17,x0,0x78
+ret
+SO8: addi x17,x0,0x00
+ret
+SO9: addi x17,x0,0x10
+ret
+CHUA: addi x17,x0,0x08
+ret
+CHUB: addi x17,x0,0x03
+ret
+CHUC: addi x17,x0,0x46
+ret
+CHUD: addi x17,x0,0x21
+ret
+CHUE: addi x17,x0,0x06
+ret
+CHUF: addi x17,x0,0x0E
+ret
+
+
